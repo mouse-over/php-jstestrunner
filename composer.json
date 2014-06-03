@@ -1,0 +1,21 @@
+{
+    "name": "mouseover/php-jstestrunner",
+    "description": "PHP runner for javascript tests",
+    "keywords": ["php", "javascript", "testing"],
+    "license": ["MIT"],
+    "authors": [
+        {
+            "name": "Vaclav Prokes",
+            "homepage": "http://github.com/vp"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "nette/nette": "2.1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "MouseOver\\JsTester": "src/"
+        }
+    }
+}

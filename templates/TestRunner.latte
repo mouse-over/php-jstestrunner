@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>PHP JsTester - Jasmine</title>
+
+	<link rel="stylesheet" href="file://{$vendorPath}/jasmine-2.0.0/jasmine.css" type="text/css" />
+	<script type="text/javascript" src="file://{$vendorPath}/jasmine-2.0.0/jasmine.js"></script>
+	<script type="text/javascript" src="file://{$vendorPath}/jasmine-2.0.0/jasmine-html.js"></script>
+	<script type="text/javascript" src="file://{$vendorPath}/jasmine-reporters/src/jasmine.junit_reporter.js"></script>
+	<script type="text/javascript" src="file://{$vendorPath}/jasmine-reporters/src/jasmine.terminal_reporter.js"></script>
+	<script type="text/javascript" src="file://{$vendorPath}/jasmine-2.0.0/boot.js"></script>
+
+	{foreach $testFiles as $testFile}
+		<script type="text/javascript" src="file://{$testFile}"></script>
+	{/foreach}
+
+	<script type="text/javascript">
+		jasmine.getEnv().addReporter(new jasmineReporters.TerminalReporter({
+			verbosity: 3,
+			color: true
+		}));
+		jasmine.getEnv().addReporter(new jasmineReporters.JUnitXmlReporter({
+			savePath: {$outputDir},
+			consolidateAll: true
+		}));
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+
